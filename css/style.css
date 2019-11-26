@@ -1,0 +1,116 @@
+
+body { max-width: 1280px; margin: 0 auto; padding: 0; font-family: "Avenir Next", sans-serif; }
+
+.pointer{ cursor: pointer; }
+
+
+
+
+
+
+
+
+#main-container {
+    display: grid;
+    grid-template-columns: 400px auto;
+    grid-template-rows: 80px auto auto auto auto 150px;
+    grid-template-areas:
+            "header header"
+            "photo main"
+            "contact main"
+            "skills main"
+            ". main"
+            "footer footer";
+    align-items: start;
+    align-content: stretch;
+}
+
+
+#sub-container {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+            "summary"
+            "experiences";
+}
+
+#skills {
+    background: green;
+    grid-area: skills;
+    height: 600px;
+}
+
+#summary {
+    background: #f9f9ff;
+    grid-area: summary;
+    padding: 40px;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+#experiences {
+    background: violet;
+    grid-area: experiences;
+    height: 1500px;
+}
+
+footer {
+    background: cyan;
+    grid-area: footer;
+    height: 150px;
+}
+
+/* HEADER */
+header { grid-area: header; background: #000000; height: 80px; position: relative; }
+header h1 { font-size: 40px; margin: 0 0 0 20px; font-weight: 100; height: 80px; line-height: 80px; color: white; }
+header #search-bar { position: absolute; right: 15px; top: 15px; height: 50px; width: 50px; border-radius: 25px; overflow: hidden; background: white; transition: width 0.3s; }
+header #search-bar:hover { width: 400px; }
+header #search-bar::before { position: absolute; width: 30px; height: 30px; margin: 10px; content: ''; background: url("../img/icon-search.png") no-repeat; background-size: contain; }
+header #search-bar-input{ border: none; height: 40px; width: 350px; margin: 5px 15px 5px 40px; padding: 5px 10px; font-size: 20px; font-weight: 100; }
+header #search-bar-input::placeholder{ color: black; font-weight: 100; }
+header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
+/* END HEADER */
+
+/* PHOTO */
+#photo {
+    grid-area: photo;
+    height: 400px;
+    background: url("../img/antoine.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+/* END PHOTO */
+
+/* CONTACT-LINKS */
+#contact-links {
+    background: rgba(8, 20, 41, 0.71);
+    grid-area: contact;
+    padding: 20px 0;
+}
+
+#contact-links .contact-link {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    margin: 0 20px 0 40px;
+    padding-left: 50px;
+    position: relative;
+}
+
+#contact-links .contact-link.icon:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#contact-links .icon-mail:before { background: url("../img/icon-mail.png"); }
+#contact-links .icon-phone:before { background: url("../img/icon-phone.png"); }
+/* END CONTACT-LINKS */
