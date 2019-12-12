@@ -151,6 +151,7 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     background: linear-gradient(to bottom, #ffffff 0%, #6773b1 100%);
     border-radius: 100%;
     z-index: 1;
+    transform: rotate(2deg);
 }
 #me #picture:before{
     content: '';
