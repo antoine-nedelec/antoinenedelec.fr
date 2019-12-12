@@ -1,0 +1,69 @@
+#desk{
+    position: relative;
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+}
+#table{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 120px;
+    height: 0;
+    border-left: 59px solid transparent;
+    border-right: 59px solid transparent;
+    border-bottom: 150px solid #c19a6b;
+    overflow: hidden;
+}
+#table-border{
+    position: absolute;
+    bottom: 20px;
+    left: -1px;
+    right: -1px;
+    height: 10px;
+    background: #c19a6b; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c19a6b 0%, #bfa88d 61%, #573922 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #c19a6b 0%,#bfa88d 61%,#573922 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #c19a6b 0%,#bfa88d 61%,#573922 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19a6b', endColorstr='#bf8542',GradientType=0 ); /* IE6-9 */
+    border-radius: 3px 3px 5px 5px;
+}
+#screen{
+    position: absolute;
+    width: 180px;
+    height: 100px;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: lightblue;
+    border: 3px solid black;
+    border-radius: 5px 5px 0 0;
+    z-index: 1;
+}
+#screen:before{
+    content: '';
+    position: absolute;
+    bottom: -23px;
+    height: 20px;
+    left: -3px;
+    right: -3px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(to right, #a2a3a8 0%, #dcdddf 100%);
+}
+#screen:after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    height: 0;
+    width: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid #999999;
+    border-radius: 0 0 8px 8px;
+    z-index: 0;
+}
+#screen-shadow{
+
+}

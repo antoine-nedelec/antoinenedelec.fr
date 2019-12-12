@@ -6,11 +6,15 @@ h1{
     margin: 0;
 }
 h2{
-    font-weight: 600;
     font-size: 30px;
+    font-weight: 600;
     margin: 20px 0;
 }
-
+#sub-container h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #343434;
+}
 .main-bg{
     position: relative;
     background: rgba(86,97,151,1);
@@ -23,7 +27,6 @@ h2{
     background-position-x: 3px;
     background-position-y: 3px;
 }
-
 .main-bg:before{
     content: '';
     position: absolute;
@@ -40,7 +43,6 @@ h2{
     background-size: 6px 6px;
     z-index: -1;
 }
-
 .secondary-bg{
     background: #232424;
     background: -moz-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
@@ -54,7 +56,6 @@ h2{
     background-position-y: 3px;
     background-size: 6px 6px;
 }
-
 .secondary-bg:before{
     content: '';
     position: absolute;
@@ -73,13 +74,13 @@ h2{
     background-size: 6px 6px;
     z-index: -1;
 }
-
 /* END GENERICS */
 
+/* CONTAINERS */
 #main-container{
     display: grid;
     grid-template-columns: 400px auto;
-    grid-template-rows: 80px auto auto auto auto 150px;
+    grid-template-rows: 80px auto auto auto auto auto;
     grid-template-areas:
             "header header"
             "me main"
@@ -88,30 +89,17 @@ h2{
             "filler main"
             "footer footer";
 }
-
-#filler{
-    grid-area: filler;
-    align-self: stretch;
-    height: 100%;
-}
-
-#sub-container{
+#sub-container {
     grid-area: main;
     display: grid;
     background: white;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    grid-template-areas:
-            "experiences"
-            "experiences";
+    grid-template-areas: "experiences" "experiences";
     height: 100%;
     z-index: -3;
 }
-#sub-container h2 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #343434;
-}
+/* END CONTAINERS */
 
 /* HEADER */
 header{ grid-area: header; background: #282828; height: 80px; position: relative; }
@@ -224,7 +212,6 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     color: #fff;
     padding: 20px 40px;
 }
-
 #skills .skill{
     position: relative;
     height: 32px;
@@ -253,23 +240,27 @@ progress::-webkit-progress-value {
 }
 /* END SKILLS */
 
+#filler{
+    grid-area: filler;
+    align-self: stretch;
+    height: 100%;
+}
+
+/* EXPERIENCES */
 #experiences{
     padding: 40px 60px;
     grid-area: experiences;
     font-family: 'Montserrat', sans-serif;
 }
-
 .experience{
     margin-bottom: 35px;
 }
-
 .experience .experience-title {
     font-weight: 700;
     font-size: 24px;
     color: #292929;
     margin-bottom: 2px;
 }
-
 .experience .experience-place {
     font-weight: normal;
     font-style: italic;
@@ -277,26 +268,15 @@ progress::-webkit-progress-value {
     color: #414042;
     margin-bottom: 5px;
 }
-
 .experience .experience-description {
     font-weight: normal;
     font-size: 20px;
     color: #6d6e71;
 }
+/* END EXPERIENCES */
 
 footer{
-    background: lightblue;
+    background: white;
     grid-area: footer;
-    height: 150px;
+    padding-bottom: 30px;
 }
-
-/*
-#7279a9
-#636c9a
-
-#4c548a
-#434f7e
-
-#41403b
-#272924
-*/
