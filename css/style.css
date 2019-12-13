@@ -73,6 +73,8 @@ h2{
     background-position-x: 3px;
     background-position-y: 3px;
 }
+a{ text-decoration: none; }
+a:active, a:focus, a:hover{ text-decoration: none; }
 /* END GENERICS */
 
 /* CONTAINERS */
@@ -86,6 +88,7 @@ h2{
             "scl main"
             "skills main"
             "filler main"
+            ". main"
             "footer footer";
 }
 #sub-container {
@@ -93,7 +96,7 @@ h2{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    grid-template-areas: "experiences" "experiences";
+    grid-template-areas: "experiences" "educations";
     height: 100%;
     position: relative;
 }
@@ -291,32 +294,98 @@ progress::-webkit-progress-value {
 
 /* EXPERIENCES */
 #experiences{
-    padding: 40px 60px;
+    padding: 40px 60px 0 60px;
     grid-area: experiences;
     font-family: 'Montserrat', sans-serif;
 }
 .experience{
+    position: relative;
     margin-bottom: 35px;
+    min-height: 150px;
+}
+.experience .experience-time {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 25px;
+    min-height: 30px;
+    color: white;
+    border-radius: 4px;
+    overflow: hidden;
 }
 .experience .experience-title {
+    position: relative;
     font-weight: 700;
+    margin-left: 270px;
+    min-height: 30px;
     font-size: 24px;
-    color: #292929;
+    color: white;
     margin-bottom: 2px;
+    border-radius: 4px;
+    padding-left: 10px;
+    overflow: hidden;
 }
 .experience .experience-place {
-    font-weight: normal;
-    font-style: italic;
+    font-weight: bold;
     font-size: 23px;
     color: #414042;
-    margin-bottom: 5px;
+    margin: 10px 0 5px 120px;
+}
+.experience .experience-place:before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 0;
+    top: 40px;
+    background-size: cover;
+}
+.experience .experience-place#experience-manomano:before{
+    background-image: url("../img/experience-manomano.png");
 }
 .experience .experience-description {
+    margin-left: 120px;
     font-weight: normal;
     font-size: 20px;
     color: #6d6e71;
 }
 /* END EXPERIENCES */
+
+/* EDUCATION */
+#educations{
+    padding: 0 60px 0 60px;
+    grid-area: educations;
+    font-family: 'Montserrat', sans-serif;
+}
+.education{
+    position: relative;
+    margin-bottom: 20px;
+}
+.education .education-year {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 25px;
+    min-height: 30px;
+    color: white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.education .education-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    min-height: 30px;
+    color: #292929;
+    margin-left: 130px;
+}
+/* END EDUCATION */
 
 footer{
     background: white;
