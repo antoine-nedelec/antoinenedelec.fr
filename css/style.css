@@ -1,5 +1,5 @@
 /* GENERICS */
-body{ max-width: 1280px; margin: 0 auto 50px auto; padding: 0; background: #282828; font-family: "Avenir Next", sans-serif; }
+body{ max-width: 1280px; margin: 0 auto 80px auto; padding: 0; background: #282828; font-family: "Avenir Next", sans-serif; }
 .pointer{ cursor: pointer; }
 h1{
     font-weight: initial;
@@ -9,6 +9,7 @@ h2{
     font-size: 30px;
     font-weight: 600;
     margin: 20px 0;
+    position: relative;
 }
 #sub-container h2 {
     font-size: 40px;
@@ -18,11 +19,11 @@ h2{
 .main-bg{
     position: relative;
     background: rgba(86,97,151,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(86,97,151,1)), color-stop(20%, rgba(86,97,151,1)), color-stop(21%, rgba(103,115,177,0)), color-stop(100%, rgba(103,115,177,0)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(86,97,151,1)), color-stop(20%, rgba(86,97,151,1)), color-stop(21%, rgba(103,115,177,1)), color-stop(100%, rgba(103,115,177,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
     background-size: 6px 6px;
     background-position-x: 3px;
     background-position-y: 3px;
@@ -35,34 +36,14 @@ h2{
     left: 0;
     top: 0;
     background: rgba(86,97,151,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(86,97,151,1)), color-stop(20%, rgba(86,97,151,1)), color-stop(21%, rgba(103,115,177,1)), color-stop(100%, rgba(103,115,177,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,1) 21%, rgba(103,115,177,1) 100%);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(86,97,151,1)), color-stop(20%, rgba(86,97,151,1)), color-stop(21%, rgba(103,115,177,0)), color-stop(100%, rgba(103,115,177,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(86,97,151,1) 0%, rgba(86,97,151,1) 20%, rgba(103,115,177,0) 21%, rgba(103,115,177,0) 100%);
     background-size: 6px 6px;
-    z-index: -1;
 }
 .secondary-bg{
-    background: #232424;
-    background: -moz-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(35,36,36,1)), color-stop(20%, rgba(35,36,36,1)), color-stop(21%, rgba(50,50,50,0)), color-stop(100%, rgba(50,50,50,0)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
-    background: radial-gradient(ellipse at center, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232424', endColorstr='#323232', GradientType=1 );
-    background-position-x: 3px;
-    background-position-y: 3px;
-    background-size: 6px 6px;
-}
-.secondary-bg:before{
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    right: 0;
-    bottom: 0;
     background: rgba(35,36,36,1);
     background: -moz-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,1) 21%, rgba(50,50,50,1) 100%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(35,36,36,1)), color-stop(20%, rgba(35,36,36,1)), color-stop(21%, rgba(50,50,50,1)), color-stop(100%, rgba(50,50,50,1)));
@@ -72,7 +53,25 @@ h2{
     background: radial-gradient(ellipse at center, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,1) 21%, rgba(50,50,50,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232424', endColorstr='#323232', GradientType=1 );
     background-size: 6px 6px;
-    z-index: -1;
+}
+.secondary-bg:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #232424;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(35,36,36,1)), color-stop(20%, rgba(35,36,36,1)), color-stop(21%, rgba(50,50,50,0)), color-stop(100%, rgba(50,50,50,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
+    background: radial-gradient(ellipse at center, rgba(35,36,36,1) 0%, rgba(35,36,36,1) 20%, rgba(50,50,50,0) 21%, rgba(50,50,50,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232424', endColorstr='#323232', GradientType=1 );
+    background-size: 6px 6px;
+    background-position-x: 3px;
+    background-position-y: 3px;
 }
 /* END GENERICS */
 
@@ -84,7 +83,7 @@ h2{
     grid-template-areas:
             "header header"
             "me main"
-            "summary-contact main"
+            "scl main"
             "skills main"
             "filler main"
             "footer footer";
@@ -92,12 +91,21 @@ h2{
 #sub-container {
     grid-area: main;
     display: grid;
-    background: white;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
     grid-template-areas: "experiences" "experiences";
     height: 100%;
-    z-index: -3;
+    position: relative;
+}
+#sub-container:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: white;
+    z-index: -2;
 }
 /* END CONTAINERS */
 
@@ -122,11 +130,14 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     color: #fff;
 }
 #me #name{
+    position: relative;
     padding: 30px 0 0 30px;
     font-size: 100px;
     line-height: 85px;
+
 }
 #me #job{
+    position: relative;
     padding: 0 0 0 30px;
     margin: 0;
     font-size: 45px;
@@ -138,7 +149,7 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     width: 230px; height: 230px;
     background: linear-gradient(to bottom, #ffffff 0%, #6773b1 100%);
     border-radius: 100%;
-    z-index: 1;
+    z-index: 3;
     transform: rotate(2deg);
 }
 #me #picture:before{
@@ -156,8 +167,8 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
 /* END ME */
 
 /* SUMMARY-CONTACT */
-#summary-contact{
-    grid-area: summary-contact;
+#summary-contact-links{
+    grid-area: scl;
     position: relative;
     font-family: 'Montserrat', sans-serif;
     padding-top: 120px;
@@ -165,7 +176,7 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     margin-right: -30px;
     color: #dadada;
 }
-#summary-contact:after{
+#summary-contact-links:after{
     content: '';
     position: absolute;
     right: -30px;
@@ -173,25 +184,26 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     bottom: -30px;
     border: 30px solid transparent;
     border-left-color: #222221;
-    z-index: -2;
+    z-index: -1;
 }
-#summary-contact #summary{
-    padding: 30px 20px 20px 30px;
+#summary-contact-links #summary{
+    padding: 30px 20px 30px 30px;
     font-size: 20px;
     line-height: 28px;
+    position: relative;
 }
-#summary-contact .contact{
-    line-height: 22px;
+#summary-contact-links .contact{
+    line-height: 25px;
     min-height: 25px;
     font-size: 18px;
     margin: 0 20px 15px 40px;
     padding-left: 40px;
     position: relative;
 }
-#summary-contact .contact.icon:before{
+#summary-contact-links .contact.icon:before{
     content: '';
     position: absolute;
-    width: 25px;
+    width: 20px;
     height: 25px;
     top: -1px;
     left: 0;
@@ -200,9 +212,40 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     background-position: center;
     filter: invert(0.9);
 }
-#summary-contact .icon-mail:before{ background: url("../img/icon-mail.png"); }
-#summary-contact .icon-phone:before{ background: url("../img/icon-phone.png"); }
-#summary-contact .icon-here:before{ background: url("../img/icon-here.png"); }
+#summary-contact-links .icon-mail:before{ background: url("../img/icon-mail.png"); filter: invert(1); }
+#summary-contact-links .icon-phone:before{ background: url("../img/icon-phone.png"); }
+#summary-contact-links .icon-here:before{ background: url("../img/icon-here.png"); }
+
+#summary-contact-links #links{
+    display: flex;
+    margin: 0 30px;
+}
+#summary-contact-links #links .link{
+    flex-grow: 1;
+    filter: invert(1);
+    transition: transform 0.5s;
+}
+#summary-contact-links #links .link:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+#summary-contact-links #links #link-gh{
+    background: url('../img/logo-github.png') center center no-repeat;
+    background-size: 50px 50px;
+}
+#summary-contact-links #links #link-so{
+    background: url('../img/logo-stackoverflow.png') center center no-repeat;
+    background-size: 50px 50px;
+}
+#summary-contact-links #links #link-v{
+    background: url('../img/logo-vimeo.png') center center no-repeat;
+    background-size: 50px 50px;
+}
+
+#summary-contact-links #links .link:hover{
+    transform: scale(1.1);
+}
 /* END CONTACT-LINKS */
 
 /* SKILLS */

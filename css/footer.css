@@ -4,6 +4,7 @@
     height: 300px;
     margin: 0 auto;
 }
+/* TABLE */
 #table{
     position: absolute;
     left: 0;
@@ -26,15 +27,16 @@
     background: -webkit-linear-gradient(top,  #c19a6b 0%,#bfa88d 61%,#573922 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  #c19a6b 0%,#bfa88d 61%,#573922 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19a6b', endColorstr='#bf8542',GradientType=0 ); /* IE6-9 */
-    border-radius: 3px 3px 5px 5px;
+    border-radius: 2px 2px 5px 5px;
 }
+/* SCREEN */
 #screen{
     position: absolute;
     width: 180px;
     height: 100px;
     top: 25px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) perspective(200px) rotateX(-7deg);
     background: lightblue;
     border: 3px solid black;
     border-radius: 5px 5px 0 0;
@@ -50,20 +52,260 @@
     border-radius: 0 0 5px 5px;
     background: linear-gradient(to right, #a2a3a8 0%, #dcdddf 100%);
 }
-#screen:after{
-    content: '';
+#screen-base{
     position: absolute;
-    bottom: -50px;
-    height: 0;
+    top: 140px;
+    height: 35px;
     width: 45px;
     left: 50%;
-    transform: translateX(-50%);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 30px solid #999999;
-    border-radius: 0 0 8px 8px;
+    transform: translateX(-50%) perspective(50px) rotateX(20deg);
+    background: linear-gradient(to bottom, #b9bdb8, #e7e7e4);
+    box-shadow: 0 2px 0 0 #ddddde;
+    z-index: 0;
+    border-radius: 0 0 5px 5px;
+}
+#screen .post-it{
+    position: absolute;
+    z-index: 5;
+    background: #f8eb88;
+    width: 20px;
+    height: 20px;
+    bottom: -30px;
+    right: 5px;
+    transform: rotate(20deg);
+    font-size: 3px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+/* COFFEE */
+#coffee{
+    position: absolute;
+    width: 35px;
+    height: 20px;
+    background: linear-gradient(to right, #bcbcbc, white);
+    left: 450px;
+    top: 200px;
+    border-radius: 50%;
+    z-index: 1;
+}
+#coffee:before{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    bottom: 10px;
+    background: linear-gradient(to right, #bcbcbc, white);
+    z-index: 1;
+}
+#coffee:after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 19px;
+    right: -10px;
+    bottom: 23px;
+    border: 4px solid white;
+    border-radius: 100%;
+    transform: perspective(200px) rotateY(45deg);
+    z-index: 0;
+}
+#coffee #liquid{
+    content: '';
+    position: absolute;
+    width: 33px;
+    height: 18px;
+    background: linear-gradient(0deg, #71706f, white);
+    top: -35px;
+    border-radius: 50%;
+    border: 1px solid white;
+    overflow: hidden;
+    z-index: 1;
+}
+#coffee #liquid:before{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 20px;
+    background: saddlebrown;
+    top: 10px;
+    border-radius: 50%;
+}
+#coffee #text{
+    position: absolute;
+    left: 4px;
+    bottom: 3px;
+    font-size: 20px;
+    color: #282828;
+    z-index: 2;
+    cursor: default;
+    transform: perspective(38px) rotate3d(0.6, 0.8, 0, -43deg);
+}
+
+#coffee .smoke{
+    position: absolute;
+    bottom: 40px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 100%;
+    z-index: 2;
+    opacity: 0;
+}
+
+#coffee #smoke1{
+    animation: animateSmoke 3.5s linear infinite;
+    animation-delay: 2s;
+    left: 2px;
+}
+
+#coffee #smoke2{
+    animation: animateSmoke 4s linear infinite;
+    animation-delay: 3s;
+    left: 10px;
+}
+
+#coffee #smoke3{
+    animation: animateSmoke 3.2s linear infinite;
+    left: 4px;
+}
+
+#coffee #smoke4{
+    animation: animateSmoke 5s linear infinite;
+    animation-delay: 1s;
+    left: 8px;
+}
+
+#coffee #smoke5{
+    animation: animateSmoke 4.5s linear infinite;
+    animation-delay: 4s;
+    left: 15px;
+}
+
+@keyframes animateSmoke {
+    0%{
+        transform: translate(0,0) scale(1);
+        opacity: 0;
+        filter: blur(5px);
+    }
+    20%{
+        transform: translate(0,0) scale(1);
+        opacity: 1;
+        filter: blur(5px);
+    }
+    100%{
+        transform: translate(5px,-50px) scale(2);
+        opacity: 0;
+        filter: blur(10px);
+    }
+}
+
+/* SHADOWwS */
+#coffee-shadow{
+    filter: blur(8px);
+    left: 450px;
+    top: 160px;
+    position: absolute;
+    width: 35px;
+    height: 45px;
+    background: #00000047;
+    transform: rotate(-47deg);
+    transform-origin: center bottom;
     z-index: 0;
 }
 #screen-shadow{
-
+    left: 100px;
+    top: 120px;
+    position: absolute;
+    width: 260px;
+    height: 70px;
+    overflow: hidden;
 }
+#screen-shadow:before{
+    content: '';
+    filter: blur(8px);
+    right: 20px;
+    bottom: 30px;
+    position: absolute;
+    width: 165px;
+    height: 55px;
+    background: #00000047;
+}
+
+/* KEYBOARD */
+#keyboard{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) perspective(340px) rotateX(35deg);
+    top: 200px;
+    width: 181px;
+    height: 43px;
+    background: linear-gradient(to right, #a2a3a8 0%, #bcbdc0 100%);
+    border-radius: 3px;
+    box-shadow: 0 2px 0 0 rgb(194, 180, 164);
+}
+#keyboard .key:hover:before{
+    top: 0;
+}
+#keyboard .key{
+    position: relative;
+    width: 7px;
+    height: 7px;
+    background: #545454;
+    border-radius: 1px;
+    margin-right: 1px;
+}
+#keyboard .space{
+    position: relative;
+    width: 2px;
+    height: 7px;
+}
+#keyboard .placeholder{
+    position: relative;
+    width: 7px;
+    height: 7px;
+    margin-right: 1px;
+}
+#keyboard .key:before{
+    content: attr(data-key);
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: -1px;
+    left: 0;
+    color: white;
+    background: black;
+    border-radius: 1px;
+    font-size: 3px;
+    text-align: center;
+    line-height: 6px;
+}
+#keyboard .key.st:before{
+    font-size: 2px;
+    line-height: 10px;
+    text-align: left;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+#keyboard .key.s1{ width: 10px }
+#keyboard .key.s1:before{ width: 10px }
+#keyboard .key.s2{ width: 11px }
+#keyboard .key.s2:before{ width: 11px }
+#keyboard .key.s3{ width: 13px }
+#keyboard .key.s3:before{ width: 13px }
+#keyboard .key.s4{ width: 15px }
+#keyboard .key.s4:before{ width: 15px }
+#keyboard .key.s5{ width: 18px }
+#keyboard .key.s5:before{ width: 18px }
+#keyboard .key.space{ width: 47px }
+#keyboard .key.space:before{ width: 47px }
+
+#keyboard .row{ position: absolute; display: flex; width: auto; height: 7px; }
+#keyboard .row-1{ bottom: 34px; left: 2px;}
+#keyboard .row-2{ bottom: 26px; left: 2px;}
+#keyboard .row-3{ bottom: 18px; left: 2px;}
+#keyboard .row-4{ bottom: 10px; left: 2px;}
+#keyboard .row-5{ bottom: 2px; left: 2px;}
+
+#keyboard #key-enter{ bottom: 8px; right: 0; height: 15px }
+#keyboard #key-enter:before{ height: 15px; line-height: 25px; }
