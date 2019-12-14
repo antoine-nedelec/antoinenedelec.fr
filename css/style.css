@@ -73,6 +73,7 @@ h2{
     background-position-x: 3px;
     background-position-y: 3px;
 }
+.main-bg span, .secondary-bg span{ position: relative; }
 a{ text-decoration: none; }
 a:active, a:focus, a:hover{ text-decoration: none; }
 /* END GENERICS */
