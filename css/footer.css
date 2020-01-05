@@ -2,7 +2,10 @@
     position: relative;
     width: 600px;
     height: 300px;
-    margin: 50px auto 0 auto;
+    margin-top: 50px;
+    margin-left: -50px;
+    margin-bottom: 50px;
+    transform: scale(1.3);
 }
 /* TABLE */
 #table{
@@ -13,7 +16,7 @@
     height: 0;
     border-left: 59px solid transparent;
     border-right: 59px solid transparent;
-    border-bottom: 150px solid #c19a6b;
+    border-bottom: 150px solid #484848;
     overflow: hidden;
 }
 #table-border{
@@ -23,9 +26,9 @@
     right: -1px;
     height: 10px;
     background: #c19a6b; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c19a6b 0%, #bfa88d 61%, #573922 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #c19a6b 0%,#bfa88d 61%,#573922 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #c19a6b 0%,#bfa88d 61%,#573922 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(top, #484848 0%, #5a5a5a 61%, #282828 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #484848 0%, #5a5a5a 61%, #282828 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #484848 0%, #5a5a5a 61%, #282828 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19a6b', endColorstr='#bf8542',GradientType=0 ); /* IE6-9 */
     border-radius: 2px 2px 5px 5px;
 }
@@ -37,10 +40,14 @@
     top: 25px;
     left: 50%;
     transform: translateX(-50%) perspective(200px) rotateX(-7deg);
-    background: lightblue;
+    background: #282a2a;
     border: 3px solid black;
     border-radius: 5px 5px 0 0;
     z-index: 1;
+    transition: transform 0.5s;
+}
+#screen.focused{
+    transform: translateX(-50%) translateY(-3px) perspective(200px) rotateX(0deg);
 }
 #screen:before{
     content: '';
@@ -64,7 +71,7 @@
     z-index: 0;
     border-radius: 0 0 5px 5px;
 }
-#screen .post-it{
+#screen #post-it{
     position: absolute;
     z-index: 5;
     background: #f8eb88;
@@ -76,6 +83,7 @@
     font-size: 3px;
     padding: 3px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 /* COFFEE */
 #coffee{
@@ -87,6 +95,7 @@
     top: 200px;
     border-radius: 50%;
     z-index: 1;
+    transform: scale(0.8);
 }
 #coffee:before{
     content: '';
@@ -126,7 +135,7 @@
     position: absolute;
     width: 35px;
     height: 20px;
-    background: saddlebrown;
+    background: #624531;
     top: 10px;
     border-radius: 50%;
 }
@@ -208,7 +217,8 @@
     width: 35px;
     height: 45px;
     background: #00000047;
-    transform: rotate(-47deg);
+    border-radius: 15px;
+    transform: rotate(-71deg) scale(0.8);
     transform-origin: center bottom;
     z-index: 0;
 }
@@ -230,6 +240,25 @@
     height: 55px;
     background: #00000047;
 }
+#pen-pot-shadow{
+    left: 482px;
+    top: 120px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+#pen-pot-shadow:before{
+    content: '';
+    filter: blur(4px);
+    right: 4px;
+    bottom: 20px;
+    position: absolute;
+    width: 26px;
+    height: 30px;
+    background: #00000047;
+    transform: rotate(25deg);
+}
 
 /* KEYBOARD */
 #keyboard{
@@ -241,7 +270,7 @@
     height: 43px;
     background: linear-gradient(to right, #a2a3a8 0%, #bcbdc0 100%);
     border-radius: 3px;
-    box-shadow: 0 2px 0 0 rgb(194, 180, 164);
+    box-shadow: 0 2px 0 0 #282828;
 }
 #keyboard .key:hover:before{
     top: 0;
@@ -309,3 +338,206 @@
 
 #keyboard #key-enter{ bottom: 8px; right: 0; height: 15px }
 #keyboard #key-enter:before{ height: 15px; line-height: 25px; }
+
+/* PHONE */
+#phone {
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    background: black;
+    left: 100px;
+    top: 180px;
+    transform: perspective(360px) rotateX(45deg) rotateY(-7deg) rotateZ(11deg);
+    border-radius: 3px;
+    box-shadow: 0.5px 1px 0px 0.5px #525252;
+}
+/*#phone {
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    background: black;
+    left: 50%;
+    top: 166px;
+    transform: translateX(-50%) perspective(340px) rotateX(42deg) rotateY(0deg) rotateZ(90deg);
+    border-radius: 3px;
+    box-shadow: 1.5px 0px 0px 0px #636262;
+}*/
+#phone:before{
+    content: attr(data-time);
+    font-size: 7px;
+    color: white;
+    text-align: center;
+    line-height: 27px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    border-radius: 2px;
+    background: url('../img/iphone-bg.jpg');
+    background-size: cover;
+    animation: hideScreen 0.2s linear forwards;
+    animation-delay: 1s;
+}
+#phone:after{
+    content: '';
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: 1px;
+    height: 2px;
+    border-radius: 0 0 1px 1px;
+    background: black;
+}
+#phone:hover:before{
+    animation: showScreen 0.2s linear forwards;
+}
+
+@keyframes hideScreen{
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes showScreen{
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+/* PEN POT */
+#pen-pot{
+    width: 30px;
+    height: 30px;
+    top: 110px;
+    left: 510px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotate3d(-1,0.4,0.1,30deg);
+    z-index: 1;
+}
+#pen-pot .pen-pot-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#pen-pot .pen-pot-face.front{ background: #6d6867; transform: rotateY(  0deg) translateZ(15px); }
+#pen-pot .pen-pot-face.right{ background: #000000; transform: rotateY( 90deg) translateZ(15px); }
+#pen-pot .pen-pot-face.back{ background: linear-gradient(to bottom, grey, black); transform: rotateY(180deg) translateZ(15px); }
+#pen-pot .pen-pot-face.left{ background: #373634; transform: rotateY(-90deg) translateZ(15px); }
+#pen-pot .pen-pot-face.top{ border: 1px solid #6d6867; transform: rotateX( 90deg) translateZ(15px); width: 28px; height: 28px; }
+
+#pen-pot .pen{
+    transform: rotate(15deg);
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    background: linear-gradient(to right, #1d0a07, #472725);
+    bottom: 0;
+    right: 5px;
+}
+#pen-pot .pen:before{
+    content: '';
+    position: absolute;
+    top: -1px;
+    width: 3px;
+    height: 2px;
+    border-radius: 100%;
+    background: #b7a995;
+}
+
+/* MOUSE */
+#mouse{
+    position: absolute;
+    width: 18px;
+    height: 33px;
+    background: linear-gradient(-55deg, #ffffff 0%, #f7f8f9 20%, #bfc0c1 50%, #878787 100%);
+    border-radius: 15px;
+    left: 170px;
+    top: 200px;
+    perspective: 200px;
+    transform: scale(1.2) rotateX(-36deg) rotateY(7deg) rotateZ(12deg) perspective(80px);
+}
+#mouse:before{
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background: linear-gradient(-80deg, transparent 0%, #d7d8d9 50%, #878787 100%);
+    border-radius: 15px;
+}
+#mouse:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 7px;
+    top: 5px;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(114deg, #5e5e5e, transparent);
+    border-radius: 100%;
+}
+#mouse #side-mouse{
+
+}
+/* FORM */
+#contact-form-container{
+    position: absolute;
+    width: calc(180px * 3);
+    height: calc(100px * 3);
+    top: 27px;
+    left: 50%;
+    padding-top: 10px;
+    transform: scale(0.33) translateX(-50%);
+    transform-origin: left top;
+    z-index: 1;
+    transition: transform 0.5s, top 0.5s;
+}
+#contact-form-container.full-screen{
+    transform: scale(1) translateX(-50%);
+    top: 0;
+}
+#contact-form-container.full-screen #contact-form{
+    transform: perspective(200px) rotateX(0deg);
+}
+#contact-form-container #contact-form{
+    transition: transform 0.5s, margin-top 0.5s, padding-top 0.5s;
+    transform: perspective(200px) rotateX(-2deg);
+    padding-bottom: 20px;
+    background: rgba(40, 42, 42, 0.7);
+    border-radius: 10px;
+}
+#contact-form-container #contact-form.focused{
+    transform: perspective(200px);
+    margin-top: -5px;
+}
+#contact-form #contact-title{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 10px;
+}
+#contact-form input, #contact-form textarea{
+    border: none;
+    width: calc(100% - 60px);
+    margin: 5px 30px;
+    padding: 5px;
+    border-radius: 3px;
+    resize: none;
+}
+#contact-form input[type=submit]{
+    cursor: pointer;
+}
+#contact-form #form-close{
+    position: absolute;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    line-height: 19px;
+    border-radius: 100%;
+    font-size: 15px;
+    top: 17px;
+    cursor: pointer;
+}

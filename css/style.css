@@ -15,6 +15,7 @@ h2{
     font-size: 40px;
     font-weight: 700;
     color: #343434;
+    border-bottom: 3px solid #343434;
 }
 .main-bg{
     position: relative;
@@ -82,22 +83,23 @@ a:active, a:focus, a:hover{ text-decoration: none; }
 #main-container{
     display: grid;
     grid-template-columns: 400px auto;
-    grid-template-rows: 80px auto auto auto auto auto;
+    grid-template-rows: 80px auto auto auto auto 1fr auto;
     grid-template-areas:
             "header header"
             "me main"
             "scl main"
             "skills main"
             "filler main"
-            ". main"
-            "footer footer";
+            "filler footer";
 }
 #sub-container {
     grid-area: main;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    grid-template-areas: "experiences" "educations";
+    grid-template-areas:
+            "experiences"
+            "educations";
     height: 100%;
     position: relative;
 }
@@ -191,10 +193,11 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     z-index: -1;
 }
 #summary-contact-links #summary{
-    padding: 30px 20px 30px 30px;
+    padding: 30px 30px 30px 30px;
     font-size: 20px;
     line-height: 28px;
     position: relative;
+    text-align: justify;
 }
 #summary-contact-links .contact{
     line-height: 25px;
@@ -203,6 +206,7 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
     margin: 0 20px 15px 40px;
     padding-left: 40px;
     position: relative;
+    word-break: break-all;
 }
 #summary-contact-links .contact.icon:before{
     content: '';
@@ -219,6 +223,7 @@ header #search-bar-input:focus, header #search-bar-input:active{ outline:0; }
 #summary-contact-links .icon-mail:before{ background: url("../img/icon-mail.png"); filter: invert(1); }
 #summary-contact-links .icon-phone:before{ background: url("../img/icon-phone.png"); }
 #summary-contact-links .icon-here:before{ background: url("../img/icon-here.png"); }
+#summary-contact-links .icon-cake:before{ background: url("../img/icon-cake.png"); margin-top: -2px; }
 
 #summary-contact-links #links{
     display: flex;
@@ -302,56 +307,72 @@ progress::-webkit-progress-value {
 .experience{
     position: relative;
     margin-bottom: 35px;
-    min-height: 150px;
-}
-.experience .experience-time {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 250px;
-    text-align: center;
-    font-weight: normal;
-    font-size: 25px;
-    min-height: 30px;
-    color: white;
-    border-radius: 4px;
-    overflow: hidden;
-}
-.experience .experience-title {
-    position: relative;
-    font-weight: 700;
-    margin-left: 270px;
-    min-height: 30px;
-    font-size: 24px;
-    color: white;
-    margin-bottom: 2px;
-    border-radius: 4px;
-    padding-left: 10px;
-    overflow: hidden;
 }
 .experience .experience-place {
-    font-weight: bold;
-    font-size: 23px;
-    color: #414042;
-    margin: 10px 0 5px 120px;
-}
-.experience .experience-place:before{
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 0;
-    top: 40px;
-    background-size: cover;
-}
-.experience .experience-place#experience-manomano:before{
-    background-image: url("../img/experience-manomano.png");
-}
-.experience .experience-description {
-    margin-left: 120px;
+    position: relative;
+    text-align: left;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 25px;
+    color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 5px 15px;
+}
+.experience .experience-place .time {
+    float: right;
+}
+.experience .experience-data {
+    display: flex;
+    position: relative;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.experience .experience-title{
+    line-height: 33px;
+    height: 33px;
+    font-size: 25px;
+    font-weight: 700;
+    overflow: hidden;
+    border-radius: 4px;
+    padding: 0 5px 0 15px;
+    margin-right: 5px;
+    flex-grow: 2;
+}
+.experience-technology{
+    text-align: left;
+    line-height: 33px;
+}
+.experience-technology span{
+    padding: 7px 10px;
+    border-radius: 4px;
+    background: gray;
+    margin-left: 5px;
+}
+.experience-technology .git{ background: black; }
+.experience-technology .html{ background: #e54c21; }
+.experience-technology .css{ background: #2a65f3; }
+.experience-technology .php{ background: #777bb4; }
+.experience-technology .js{ background: #d4b830; }
+.experience-technology .git{ background: black; }
+.experience-technology .java{ background: #ea2d2d; }
+.experience-technology .swift{ background: #f15035; }
+.experience .experience-description {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 10px;
     color: #6d6e71;
+}
+.experience .experience-description a{
+    color: #6d6e71;
+    text-decoration: underline;
+}
+.experience .experience-description ul{
+    margin-top: 5px;
+}
+.experience .experience-description .small-margin{
+    margin-top: 5px;
 }
 /* END EXPERIENCES */
 
@@ -392,4 +413,96 @@ footer{
     background: white;
     grid-area: footer;
     padding-bottom: 30px;
+}
+
+@media (max-width:1150px) {
+    #main-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 80px auto auto auto auto;
+        grid-template-areas:
+                "header header"
+                "me skills"
+                "scl skills"
+                "main main"
+                "footer footer";
+    }
+
+    #summary-contact-links{
+        margin-right: 0;
+    }
+    #summary-contact-links:after{
+        display: none;
+    }
+
+    footer #desk{
+        margin: 50px auto;
+    }
+}
+
+@media (max-width:850px) {
+    #main-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto auto auto auto;
+        grid-template-areas:
+                "header"
+                "me"
+                "scl"
+                "skills"
+                "main"
+                "footer";
+    }
+
+    #skills{
+        padding-bottom: 40px;
+    }
+
+    footer{
+        min-height: 300px;
+    }
+
+    footer #desk{
+        position: absolute;
+        margin: 50px auto;
+        left: 50%;
+        transform: scale(1) translateX(-50%);
+    }
+
+    #experiences, #educations{
+        padding: 0 20px;
+    }
+
+    #summary-contact-links:after{
+        display: none;
+    }
+
+    #summary-contact-links{
+        margin-right: 0;
+    }
+
+    header #search-bar:hover {
+        width: 345px;
+    }
+}
+
+
+@media (max-width:700px) {
+
+    #experiences, #educations{
+        padding: 0 10px;
+    }
+
+    .experience .experience-data{
+        display: block;
+    }
+
+    .experience .experience-title{
+        margin-right: 0;
+    }
+
+    .experience-technology{
+        margin-top: 10px;
+        text-align: right;
+    }
 }
